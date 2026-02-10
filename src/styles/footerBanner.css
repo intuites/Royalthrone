@@ -1,0 +1,318 @@
+/* ========================= */
+/* FOOTER BANNER */
+/* ========================= */
+:root {
+  --goldnrod: #daa520;
+  --text-dark: #1a1a1a;
+  --black: #0b0b0b;
+}
+
+.footer-banner {
+  width: 100%;
+  padding: 60px 20px;
+
+  /* SAME AS WEBSITE BACKGROUND */
+  /* background: url("../assets/backgrounds/paper-texture.png"); */
+  background-color: var(--text-dark);
+  background-repeat: repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+/* ========================= */
+/* FOOTER INNER BOX */
+/* ========================= */
+
+.footer-inner {
+  max-width: 80%;
+  margin: auto;
+
+  /* background: rgba(244, 241, 236, 0.92); */
+  background-color: var(--text-dark);
+  border: 1px solid var(--goldnrod);
+  border-radius: 18px;
+
+  padding: 34px 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+}
+
+/* ========================= */
+/* LEFT TEXT */
+/* ========================= */
+
+.footer-about {
+  flex: 2;
+  color: rgba(26, 26, 26, 0.85);
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+/* ========================= */
+/* DIVIDER */
+/* ========================= */
+
+/* .footer-divider {
+  position: relative;
+  width: 2px;
+  height: 60px;
+
+  background: linear-gradient(
+    to bottom,
+    rgba(212, 175, 55, 0) 0%,
+    rgba(212, 175, 55, 0.35) 15%,
+    rgba(212, 175, 55, 1) 50%,
+    rgba(212, 175, 55, 0.35) 85%,
+    rgba(212, 175, 55, 0) 100%
+  );
+
+  border-radius: 10px;
+  opacity: 0.9;
+}
+
+.footer-divider::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  width: 10px;
+  height: 10px;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+
+  background: radial-gradient(
+    circle at 30% 30%,
+    #fff6c9 0%,
+    #e6c15a 35%,
+    #b8962e 70%,
+    #7a5a14 100%
+  );
+} */
+
+/* ========================= */
+/* LINKS */
+/* ========================= */
+
+.footer-links {
+  flex: 1.5;
+  display: flex;
+  gap: 50px;
+  justify-content: center;
+}
+
+.footer-col {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer-col a {
+  text-decoration: none;
+  color: var(--goldnrod);
+
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+
+  transition: 0.2s;
+}
+
+.footer-col a:hover {
+  color: #d4af37;
+}
+
+/* ========================= */
+/* RIGHT SIDE */
+/* ========================= */
+
+.footer-right {
+  flex: 1.5;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  align-items: flex-end;
+}
+
+/* ========================= */
+/* SOCIAL ICONS */
+/* ========================= */
+
+.footer-social {
+  display: flex;
+  gap: 12px;
+}
+
+.footer-social a {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+
+  border: 1px solid var(--goldnrod);
+  background: var(--text-dark);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: rgba(26, 26, 26, 0.85);
+  text-decoration: none;
+
+  transition: 0.25s ease;
+}
+
+.footer-social a svg {
+  width: 18px;
+  height: 18px;
+}
+
+.footer-social a:hover {
+  background: var(--black);
+  border-color: #d4af37;
+  color: #000;
+}
+
+/* ========================= */
+/* COPYRIGHT TEXT */
+/* ========================= */
+
+.footer-copy p {
+  margin: 0;
+  color: var(--goldnrod);
+  font-size: 12px;
+  line-height: 1.6;
+  text-align: right;
+}
+
+/* ========================= */
+/* RESPONSIVE */
+/* ========================= */
+
+/* @media (max-width: 900px) {
+  .footer-inner {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    padding: 26px 20px;
+  }
+
+  .footer-divider {
+    width: 80%;
+    height: 2px;
+
+    background: linear-gradient(
+      to right,
+      rgba(212, 175, 55, 0) 0%,
+      rgba(212, 175, 55, 0.35) 15%,
+      rgba(212, 175, 55, 1) 50%,
+      rgba(212, 175, 55, 0.35) 85%,
+      rgba(212, 175, 55, 0) 100%
+    );
+  }
+
+  .footer-links {
+    gap: 30px;
+  }
+
+  .footer-right {
+    align-items: center;
+  }
+
+  .footer-copy p {
+    text-align: center;
+  }
+} */
+
+@media (max-width: 900px) {
+  .footer-inner {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    padding: 22px 18px;
+    gap: 18px;
+  }
+
+  /* Make divider longer before rotating */
+  .footer-vertical-divider {
+    height: 140px; /* controls horizontal length after rotation */
+    transform: rotate(90deg);
+    transform-origin: center;
+    margin: 24px 0;
+  }
+
+  .footer-links {
+    gap: 24px;
+  }
+
+  .footer-right {
+    align-items: center;
+  }
+
+  .footer-copy p {
+    text-align: center;
+  }
+}
+
+/* LONG GOLD DIVIDER */
+.footer-vertical-divider {
+  position: relative;
+  width: 2px;
+  height: 100px;
+  margin: 16px auto 34px;
+
+  background: linear-gradient(
+    to bottom,
+    rgba(212, 175, 55, 0) 0%,
+    rgba(212, 175, 55, 1) 18%,
+    rgba(212, 175, 55, 1) 82%,
+    rgba(212, 175, 55, 0) 100%
+  );
+}
+
+/* 4-POINT STAR (CSS ONLY) */
+.footer-vertical-divider::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  width: 34px; /* star size */
+  height: 34px;
+  transform: translate(-50%, -50%) rotate(45deg);
+
+  background: var(--gold);
+  clip-path: polygon(
+    50% 0%,
+    62% 38%,
+    100% 50%,
+    62% 62%,
+    50% 100%,
+    38% 62%,
+    0% 50%,
+    38% 38%
+  );
+
+  box-shadow: 0 0 0 3px rgba(244, 241, 236, 0.9); /* small light border like your paper bg */
+}
+
+/* CENTER HOLE CIRCLE */
+.footer-vertical-divider::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  width: 9px;
+  height: 9px;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+
+  background: rgba(244, 241, 236, 0.95); /* paper color */
+  z-index: 2;
+}

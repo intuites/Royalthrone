@@ -1,0 +1,153 @@
+:root {
+  --gold: #d4af37;
+}
+
+/* Full page */
+.admin-movies-page {
+  min-height: 100vh;
+  background:
+    linear-gradient(rgba(8, 8, 8, 0.9), rgba(8, 8, 8, 0.9)),
+    url("../assets/backgrounds/hero-bg.png");
+  background-size: cover;
+  background-position: center;
+
+  display: flex;
+  justify-content: center;
+  padding: 80px 20px;
+}
+
+/* Panel */
+.admin-movies-panel {
+  width: 100%;
+  max-width: 1000px;
+  background: rgba(15, 15, 15, 0.9);
+  backdrop-filter: blur(12px);
+  border-radius: 16px;
+  padding: 40px;
+
+  box-shadow:
+    0 25px 70px rgba(0, 0, 0, 0.8),
+    inset 0 0 0 1px rgba(212, 175, 55, 0.15);
+}
+
+/* Header */
+.admin-movies-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.admin-movies-header h2 {
+  color: var(--gold);
+  letter-spacing: 2px;
+}
+
+/* Add button */
+.admin-add-btn {
+  padding: 10px 22px;
+  background: var(--gold);
+  color: black;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  letter-spacing: 1px;
+  transition: 0.3s;
+}
+
+.admin-add-btn:hover {
+  box-shadow: 0 0 20px rgba(212, 175, 55, 0.8);
+}
+
+/* Movie list */
+.admin-movie-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* Each row */
+.admin-movie-row {
+  display: flex;
+  cursor: pointer;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 18px;
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 10px;
+  border: 1px solid rgba(212, 175, 55, 0.15);
+  transition: 0.3s;
+}
+
+.admin-movie-row:hover {
+  background: rgba(212, 175, 55, 0.05);
+  border-color: rgba(212, 175, 55, 0.4);
+}
+
+/* Movie text */
+.movie-title {
+  color: white;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.movie-year {
+  color: rgba(255, 255, 255, 0.6);
+  margin-left: 10px;
+}
+
+/* Actions */
+.admin-movie-actions {
+  display: flex;
+  gap: 14px;
+}
+
+.admin-movie-actions button {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+/* Edit */
+.admin-movie-actions .edit {
+  /* background: rgba(212, 175, 55, 0.9); */
+  background: rgba(212, 175, 55, 0.9);
+  color: black;
+}
+.admin-movie-actions svg {
+  font-size: 16px;
+  color: #ffffff;
+}
+/* Force all admin icons to be white */
+.admin-movie-actions svg {
+  color: #ffffff !important;
+  fill: #ffffff !important;
+}
+
+/* Delete */
+.admin-movie-actions .delete {
+  background: rgba(255, 70, 70, 0.85);
+  color: white;
+}
+
+.admin-movie-actions button:hover {
+  transform: scale(1.1);
+}
+
+/* Mobile */
+@media (max-width: 700px) {
+  .admin-movies-panel {
+    padding: 24px;
+  }
+
+  .admin-movies-header {
+    flex-direction: column;
+    gap: 15px;
+    align-items: flex-start;
+  }
+}

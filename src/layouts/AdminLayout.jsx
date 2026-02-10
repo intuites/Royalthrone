@@ -1,0 +1,15 @@
+import { Navigate, Outlet } from "react-router-dom";
+
+export default function AdminLayout() {
+  const token = localStorage.getItem("admin_token");
+
+  if (!token) {
+    return <Navigate to="/admin/login" replace />;
+  }
+
+  return (
+    <div style={{ minHeight: "100vh", backgroundColor: "#111", color: "#fff" }}>
+      <Outlet />
+    </div>
+  );
+}

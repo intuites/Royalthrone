@@ -1,0 +1,478 @@
+/* ===========================
+   HERO SECTION
+=========================== */
+
+.hero {
+  height: 100vh;
+  background:
+    linear-gradient(rgba(11, 11, 11, 0.7), rgba(11, 11, 11, 0.7)),
+    url("../assets/backgrounds/hero-bg.png");
+  background-size: cover;
+  background-position: center;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+:root {
+  --text-dark: #1a1a1a;
+  --white: #ffffff;
+  --goldnrod: #daa520;
+}
+
+/* LOGO */
+.hero-logo {
+  width: 350px;
+  margin-bottom: 8px;
+  user-select: none;
+  padding: 14px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(0, 0, 0, 0.35) 0%,
+    rgba(0, 0, 0, 0.15) 40%,
+    rgba(0, 0, 0, 0) 70%
+  );
+}
+
+/* TITLE */
+.hero h1 {
+  font-size: 42px;
+  letter-spacing: 3px;
+  margin-bottom: 6px;
+  color: white;
+}
+
+/* TAGLINE */
+.hero p {
+  font-size: 14px;
+  letter-spacing: 1px;
+  opacity: 0.85;
+  margin-bottom: 10px;
+}
+
+/* BUTTONS */
+.hero-buttons button {
+  margin: 0px 8px;
+}
+
+/* PRIMARY BUTTON */
+.primary {
+  background: var(--gold);
+  color: #000;
+  border: 1px solid var(--gold);
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* OUTLINE BUTTON */
+.outline {
+  background: transparent;
+  border: 1px solid var(--gold);
+  color: var(--gold);
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.outline:hover {
+  background: var(--gold);
+  color: #000;
+}
+
+/* GOLD DIVIDER LINE */
+.hero-divider {
+  position: relative;
+  width: 320px;
+  height: 1px;
+  margin: 18px 0 28px;
+
+  background: linear-gradient(
+    to right,
+    rgba(212, 175, 55, 0.15) 0%,
+    rgba(212, 175, 55, 0.8) 50%,
+    rgba(212, 175, 55, 0.15) 100%
+  );
+}
+
+/* CENTER GOLD DOT */
+.hero-divider::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  width: 8px;
+  height: 8px;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+
+  background: radial-gradient(
+    circle at 30% 30%,
+    #fff6c9 0%,
+    #e6c15a 35%,
+    #b8962e 70%,
+    #7a5a14 100%
+  );
+}
+
+/* ===========================
+   HOME FILMS CAROUSEL (FULL SCREEN)
+=========================== */
+
+.films-section {
+  padding: 80px 0px;
+}
+
+.films-section h2 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+/* Full width carousel container */
+.films-carousel-wrap {
+  width: 100%;
+  /* margin: auto; */
+  padding: 0 40px;
+}
+
+/* Slider */
+.films-carousel {
+  display: flex;
+  overflow-x: auto;
+
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+
+  width: 100%;
+  padding: 0px;
+  gap: 10px;
+
+  /* Smooth touch swipe */
+  -webkit-overflow-scrolling: touch;
+
+  /* Desktop drag cursor */
+  cursor: grab;
+
+  touch-action: pan-y;
+}
+
+/* When dragging */
+.films-carousel.dragging {
+  cursor: grabbing;
+}
+
+/* Hide scrollbar */
+.films-carousel::-webkit-scrollbar {
+  height: 0px;
+}
+
+/* Each slide takes full screen width */
+.home-film-slide {
+  flex: 0 0 100%;
+  scroll-snap-align: center;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Card wrapper (no text, only image) */
+.home-film-card {
+  width: 100%;
+  max-width: 1400px;
+  background: transparent;
+  padding: 0;
+}
+
+/* Poster full screen look */
+.home-film-poster {
+  width: 100%;
+  height: clamp(320px, 80vh, 700px); /* responsive rectangle */
+  object-fit: cover; /* fills full rectangle */
+  border-radius: 14px;
+  border: 1px solid var(--goldnrod);
+
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+
+  user-select: none;
+  -webkit-user-drag: none;
+  /* 🔥 Smooth drag feeling */
+  touch-action: pan-y; /* allow vertical scroll, block horizontal */
+  -webkit-touch-callout: none;
+}
+
+/* Dots */
+.films-dots {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.films-dots .dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  background: rgba(0, 0, 0, 0.25);
+}
+
+.films-dots .dot.active {
+  background: rgba(0, 0, 0, 0.85);
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+
+@media (max-width: 700px) {
+  .films-carousel-wrap {
+    padding: 0 14px;
+  }
+
+  .home-film-poster {
+    height: clamp(320px, 55vh, 650px);
+  }
+
+  .films-section {
+    padding: 60px 0px;
+  }
+
+  .home-film-card {
+    max-width: 95%;
+  }
+
+  /* .home-film-poster {
+    height: 70vh;
+  } */
+
+  .hero-logo {
+    width: 260px;
+  }
+
+  .hero h1 {
+    font-size: 28px;
+  }
+}
+.white-section h2 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+/* LONG GOLD DIVIDER */
+.about-divider {
+  position: relative;
+  width: 460px; /* longer */
+  height: 2px;
+  margin: 16px auto 34px;
+
+  background: linear-gradient(
+    to right,
+    transparent 0%,
+    rgba(212, 175, 55, 0.25) 12%,
+    rgba(212, 175, 55, 0.95) 50%,
+    rgba(212, 175, 55, 0.25) 88%,
+    transparent 100%
+  );
+}
+
+/* 4-POINT STAR (CSS ONLY) */
+.about-divider::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  width: 34px; /* star size */
+  height: 34px;
+  transform: translate(-50%, -50%) rotate(45deg);
+
+  background: var(--gold);
+  clip-path: polygon(
+    50% 0%,
+    62% 38%,
+    100% 50%,
+    62% 62%,
+    50% 100%,
+    38% 62%,
+    0% 50%,
+    38% 38%
+  );
+
+  box-shadow: 0 0 0 3px rgba(244, 241, 236, 0.9); /* small light border like your paper bg */
+}
+
+/* CENTER HOLE CIRCLE */
+.about-divider::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  width: 9px;
+  height: 9px;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+
+  background: rgba(244, 241, 236, 0.95); /* paper color */
+  z-index: 2;
+}
+
+.scroll-top-btn {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  border: none;
+
+  background: linear-gradient(135deg, #d4af37, #b8962e);
+  color: black;
+  font-size: 22px;
+  font-weight: bold;
+
+  cursor: pointer;
+  z-index: 999;
+
+  box-shadow: 0 10px 30px rgba(212, 175, 55, 0.5);
+  transition: 0.3s ease;
+}
+
+.scroll-top-btn:hover {
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 15px 40px rgba(212, 175, 55, 0.8);
+}
+
+.scroll-top-btn {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #d4af37, #b8962e);
+  box-shadow: 0 10px 30px rgba(212, 175, 55, 0.5);
+  z-index: 999;
+}
+/* ===============================
+   HOME – AWARDS POSTER GRID
+================================ */
+.home-awards-grid {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  display: grid;
+  /* flex-direction: row-reverse; */
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+/* ===============================
+   CARD
+================================ */
+.home-award-card {
+  position: relative;
+  height: 360px;
+  border-radius: 18px;
+  overflow: hidden;
+
+  background: #000;
+  border: 1px solid rgba(212, 175, 55, 0.25);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.home-award-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 22px 44px rgba(0, 0, 0, 0.85);
+}
+
+/* ===============================
+   POSTER
+================================ */
+.home-award-poster {
+  position: absolute;
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+  object-position: center;
+}
+
+/* ===============================
+   GRADIENT
+================================ */
+.home-award-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.9),
+    rgba(0, 0, 0, 0.4),
+    rgba(0, 0, 0, 0)
+  );
+  z-index: 1;
+}
+
+/* ===============================
+   OVERLAY TEXT
+================================ */
+.home-award-overlay {
+  position: absolute;
+  left: 14px;
+  right: 14px;
+  bottom: 14px;
+  z-index: 2;
+}
+
+/* ===============================
+   TEXT
+================================ */
+.home-award-year {
+  display: inline-block;
+  background: #d4af37;
+  color: #000;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 999px;
+  margin-bottom: 8px;
+}
+
+.home-award-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 4px;
+}
+
+.home-award-movie {
+  font-size: 12.5px;
+  color: #cfcfcf;
+}
+
+/* ===============================
+   RESPONSIVE
+================================ */
+@media (max-width: 768px) {
+  .home-awards-grid {
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 18px;
+  }
+
+  .home-award-card {
+    height: 320px;
+  }
+}

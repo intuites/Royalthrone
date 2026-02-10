@@ -1,0 +1,230 @@
+/* ===========================
+   GLOBAL RESET
+=========================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ===========================
+   VARIABLES
+=========================== */
+:root {
+  --black: #0b0b0b;
+  --gold: #d4af37;
+  --goldnrod: #daa520;
+  --white: #f4f1ec;
+  --text-dark: #1a1a1a;
+
+  --card-bg: rgba(255, 255, 255, 0.92);
+  --border: rgba(0, 0, 0, 0.12);
+  --shadow: 0px 18px 55px rgba(0, 0, 0, 0.18);
+
+  --primary: #e11d2e;
+  --primary-dark: #b81422;
+}
+
+/* ===========================
+   PAGE BACKGROUND
+=========================== */
+.pitch-page {
+  /* background: url("../assets/backgrounds/paper-texture.png"); */
+  background-color: var(--text-dark);
+  background-size: cover;
+  background-repeat: repeat;
+  min-height: 100vh;
+  /* object-fit: cover; */
+}
+
+/* ===========================
+   HERO IMAGE
+=========================== */
+.pitch-hero {
+  width: 100%;
+  height: calc(100vh - 90px);
+  margin-top: 90px;
+  position: relative;
+  overflow: hidden;
+}
+
+.pitch-hero-img {
+  width: 100%;
+  /* height: calc(100vh - 90px); */
+  /* min-height: 420px; */
+  /* max-height: 560px; */
+  /* margin-top: 50px; */
+  /* position: relative; */
+  overflow: hidden;
+  user-select: none;
+}
+
+/* ===========================
+   FORM SECTION
+=========================== */
+.pitch-form-section {
+  padding: 60px 16px 90px;
+}
+
+.pitch-form-container {
+  width: 100%;
+  max-width: 1050px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* Title */
+.pitch-title {
+  font-size: clamp(26px, 3vw, 42px);
+  font-weight: 900;
+  letter-spacing: 1px;
+  color: var(--goldnrod);
+  text-transform: uppercase;
+}
+
+.pitch-subtitle {
+  margin-top: 10px;
+  font-size: 15px;
+  /* color: rgba(0, 0, 0, 0.7); */
+  color: var(--goldnrod);
+}
+
+/* Card */
+.pitch-card {
+  margin-top: 35px;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 30px 28px;
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(10px);
+}
+
+/* Form */
+.pitch-form {
+  width: 100%;
+  text-align: left;
+}
+
+.pitch-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+}
+
+.pitch-field {
+  display: flex;
+  flex-direction: column;
+}
+
+.pitch-field label {
+  font-size: 13px;
+  font-weight: 700;
+  margin-bottom: 7px;
+  color: rgba(0, 0, 0, 0.75);
+}
+
+/* Inputs */
+.pitch-field input,
+.pitch-field select,
+.pitch-field textarea {
+  width: 100%;
+  padding: 14px 14px;
+  font-size: 14px;
+  border-radius: 12px;
+  border: 1px solid rgba(0, 0, 0, 0.14);
+  background: rgba(255, 255, 255, 0.9);
+  outline: none;
+  transition: 0.2s ease;
+}
+
+.pitch-field input::placeholder,
+.pitch-field textarea::placeholder {
+  color: rgba(0, 0, 0, 0.4);
+}
+
+/* Focus */
+.pitch-field input:focus,
+.pitch-field select:focus,
+.pitch-field textarea:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(225, 29, 46, 0.18);
+}
+
+/* Textarea */
+.pitch-field textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+/* Full width row */
+.pitch-full {
+  margin-top: 18px;
+}
+
+/* Button */
+.pitch-submit {
+  margin-top: 24px;
+  width: 100%;
+  padding: 15px 18px;
+  border: none;
+  border-radius: 14px;
+  background: var(--primary);
+  color: #fff;
+  font-size: 16px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: 0.25s ease;
+  letter-spacing: 0.5px;
+}
+
+.pitch-submit:hover {
+  background: var(--primary-dark);
+  transform: translateY(-1px);
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+@media (max-width: 900px) {
+  .pitch-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .pitch-card {
+    padding: 22px 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .pitch-hero {
+    margin-top: 70px;
+    /* height: 55vh; */
+    height: calc(100vh - 70vh);
+    min-height: 320px;
+  }
+
+  .pitch-hero-img {
+    object-position: center top;
+    user-select: none;
+  }
+
+  .pitch-title {
+    text-align: center;
+  }
+
+  .pitch-subtitle {
+    text-align: center;
+  }
+}
+.scroll-top-btn {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #d4af37, #b8962e);
+  box-shadow: 0 10px 30px rgba(212, 175, 55, 0.5);
+  z-index: 999;
+}

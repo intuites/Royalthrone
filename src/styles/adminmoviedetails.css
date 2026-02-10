@@ -1,0 +1,727 @@
+.movie-details-page {
+  background: #0b0b0b;
+  color: white;
+}
+
+.movie-banner {
+  height: 80vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-position: top;
+}
+
+.movie-content {
+  max-width: 1200px;
+  margin: auto;
+  align-items: center;
+  display: flex;
+  gap: 40px;
+  padding: 40px;
+}
+
+.movie-poster {
+  width: 260px;
+  border-radius: 12px;
+  box-shadow: 0 0 40px rgba(212, 175, 55, 0.25);
+}
+
+.movie-info h1 {
+  color: #d4af37;
+  max-width: 680px;
+}
+
+.synopsis {
+  /* max-width: 600px;
+  line-height: 1.6;
+   */
+  color: #e5e5e5;
+  font-size: 15px;
+  line-height: 1.7;
+  margin-top: 16px;
+}
+
+.movie-section {
+  padding: 40px;
+}
+
+/* Card grid */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 26px;
+  margin-top: 20px;
+}
+
+/* Premium person card */
+.card {
+  background: linear-gradient(180deg, #151515, #0b0b0b);
+  border-radius: 16px;
+  overflow: hidden;
+  text-align: center;
+  position: relative;
+  border: 1px solid rgba(212, 175, 55, 0.2);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.8);
+  transition: all 0.4s ease;
+  cursor: pointer;
+}
+
+/* Glow on hover */
+.card:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 0 30px rgba(212, 175, 55, 0.5);
+  border-color: rgba(212, 175, 55, 0.8);
+}
+
+/* Image container */
+.card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+  user-select: none;
+}
+
+/* Name */
+.card p {
+  margin-top: 12px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #fff;
+}
+
+/* Role / job */
+.card span {
+  display: block;
+  font-size: 13px;
+  margin-bottom: 14px;
+  color: #d4af37;
+  letter-spacing: 0.6px;
+}
+
+.gallery {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.gallery img {
+  width: 200px;
+  border-radius: 12px;
+  user-select: none;
+}
+
+.add-box {
+  display: flex;
+  gap: 12px;
+  margin: 15px 0 25px;
+}
+/* //////////////// */
+/* Card layout fix */
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Image container height */
+.card img {
+  height: 220px;
+  flex-shrink: 0;
+  user-select: none;
+}
+
+/* Text area */
+.card p,
+.card span {
+  padding: 0 12px;
+  word-break: break-word;
+  white-space: normal;
+  text-align: center;
+}
+
+/* Keep name and role inside visible area */
+.card p {
+  margin: 12px 0 4px;
+  min-height: 20px;
+}
+
+.card span {
+  margin-bottom: 12px;
+  min-height: 18px;
+}
+
+.add-box input {
+  background: #111;
+  border: 1px solid #d4af37;
+  color: white;
+  padding: 10px;
+  border-radius: 6px;
+}
+
+.add-box button {
+  background: #d4af37;
+  border: none;
+  color: #0b0b0b;
+  padding: 10px 16px;
+  cursor: pointer;
+  border-radius: 6px;
+  font-weight: bold;
+}
+/*  */
+
+/* Card */
+.card {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Top bar */
+.card-toolbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  height: 42px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  padding: 8px 12px;
+
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.85),
+    rgba(0, 0, 0, 0.25),
+    rgba(0, 0, 0, 0)
+  );
+
+  z-index: 5;
+}
+
+/* Buttons */
+.card-toolbar button {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+
+  background: rgba(0, 0, 0, 0.7);
+  border: 1px solid rgba(212, 175, 55, 0.6);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transition: 0.2s ease;
+}
+
+/* Icons */
+.card-toolbar svg {
+  font-size: 13px;
+  color: #fff;
+}
+
+/* Hover */
+.card-toolbar button:hover {
+  background: #d4af37;
+}
+
+.card-toolbar button:hover svg {
+  color: #000;
+}
+
+/* Text block */
+.card-info {
+  padding: 12px;
+}
+
+/* ============================
+   ADMIN LOADER
+============================ */
+
+.admin-loader-wrap {
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(circle, #0b0b0b 40%, #000 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+/* Gold rotating ring */
+.admin-loader-ring {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  border: 4px solid rgba(212, 175, 55, 0.15);
+  border-top-color: #d4af37;
+  border-right-color: #d4af37;
+  animation: spinGold 1s linear infinite;
+  box-shadow: 0 0 30px rgba(212, 175, 55, 0.6);
+}
+
+/* Text */
+.admin-loader-wrap p {
+  margin-top: 20px;
+  color: #d4af37;
+  font-size: 14px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+/* Spin animation */
+@keyframes spinGold {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.songs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 18px;
+}
+
+.song-card {
+  background: #111;
+  border-radius: 14px;
+  padding: 16px;
+  color: #fff;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  position: relative;
+}
+
+.song-card h3 {
+  margin: 8px 0;
+  color: #d4af37;
+}
+
+.song-card p {
+  font-size: 13px;
+  opacity: 0.85;
+}
+
+.song-player {
+  margin-top: 12px;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.song-player iframe {
+  width: 100%;
+  height: 180px;
+  border: none;
+}
+
+.listen-link {
+  display: inline-block;
+  margin-top: 10px;
+  color: #d4af37;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.listen-link:hover {
+  text-decoration: underline;
+}
+/* teaser css */
+.teaser-player {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%; /* 16:9 */
+  border-radius: 14px;
+  overflow: hidden;
+  background: #000;
+}
+
+.teaser-player iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+/* //links movie css */
+
+.movie-links-grid {
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+}
+.movie-link-card {
+  text-align: left;
+  padding: 16px;
+  transform: none !important;
+}
+
+.movie-link-card:hover {
+  transform: translateY(-4px) !important;
+  box-shadow: 0 14px 40px rgba(212, 175, 55, 0.35);
+}
+.movie-link-card img {
+  display: none;
+  user-select: none;
+}
+.movie-link-card .card-info {
+  padding: 0;
+}
+
+.movie-link-card .link-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 6px;
+}
+.movie-link-card .platform {
+  display: inline-block;
+  margin-bottom: 8px;
+  padding: 4px 10px;
+  font-size: 11px;
+  font-weight: 600;
+  border-radius: 999px;
+  background: rgba(212, 175, 55, 0.15);
+  color: #d4af37;
+  text-transform: uppercase;
+}
+.movie-link-card a {
+  font-size: 13px;
+  color: #bfbfbf;
+  text-decoration: none;
+  word-break: break-all;
+}
+
+.movie-link-card a:hover {
+  color: #d4af37;
+  text-decoration: underline;
+}
+.movie-link-card .card-toolbar {
+  background: none;
+}
+
+.movie-link-card .card-toolbar button {
+  background: rgba(0, 0, 0, 0.6);
+}
+.movie-section .add-box select {
+  background: #111;
+  border: 1px solid #d4af37;
+  color: white;
+  padding: 10px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.movie-section .add-box {
+  flex-wrap: wrap;
+}
+/* =========================
+   MOVIE LINKS (SMART CARDS)
+========================= */
+
+.movie-links-cards {
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+}
+
+/* Card base */
+.movie-link-card {
+  background: linear-gradient(180deg, #151515, #0b0b0b);
+  border-radius: 16px;
+  border: 1px solid rgba(212, 175, 55, 0.25);
+  overflow: hidden;
+  text-decoration: none;
+  color: white;
+  position: relative;
+  transition: 0.35s ease;
+}
+
+.movie-link-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 45px rgba(212, 175, 55, 0.35);
+}
+
+/* YouTube thumbnail */
+.movie-link-thumb {
+  height: 160px;
+  background-size: cover;
+  background-position: center;
+}
+
+/* Spotify iframe */
+.movie-link-card iframe {
+  width: 100%;
+  height: 160px;
+  border: none;
+}
+
+/* Info */
+.movie-link-info {
+  padding: 14px;
+}
+
+.movie-link-info .link-title {
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.platform-tag {
+  display: inline-block;
+  font-size: 11px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: rgba(212, 175, 55, 0.15);
+  color: #d4af37;
+  text-transform: uppercase;
+}
+
+/* Toolbar fix */
+.movie-link-card .card-toolbar {
+  background: none;
+}
+
+.movie-link-card .card-toolbar button {
+  background: rgba(0, 0, 0, 0.6);
+}
+/* =========================
+   PREMIUM MOVIE LINKS
+========================= */
+
+.movie-links-cards {
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+}
+
+/* Card */
+.movie-link-card {
+  background: linear-gradient(180deg, #141414, #0b0b0b);
+  border-radius: 18px;
+  border: 1px solid rgba(212, 175, 55, 0.25);
+  overflow: hidden;
+  text-decoration: none;
+  color: white;
+  position: relative;
+  transition: 0.35s ease;
+}
+
+.movie-link-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 22px 50px rgba(212, 175, 55, 0.45);
+}
+
+/* Media */
+.movie-link-media {
+  height: 160px;
+  background: #000;
+  overflow: hidden;
+}
+
+.movie-link-media img,
+.movie-link-media iframe {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border: none;
+  user-select: none;
+}
+
+/* Fallback */
+.movie-link-fallback {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #999;
+  font-size: 14px;
+}
+
+/* Info */
+.movie-link-info {
+  padding: 14px;
+  text-align: center;
+}
+
+.movie-link-info p {
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.platform-tag {
+  display: inline-block;
+  font-size: 11px;
+  padding: 4px 12px;
+  border-radius: 999px;
+  background: rgba(212, 175, 55, 0.18);
+  color: #d4af37;
+  text-transform: uppercase;
+}
+/* ///dsd */
+/* ===============================
+   MOVIE LINK MEDIA FIXES
+================================ */
+
+.movie-link-media {
+  height: 180px;
+  overflow: hidden;
+  border-bottom: 1px solid rgba(212, 175, 55, 0.25);
+}
+
+/* YouTube image */
+.movie-link-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  user-select: none;
+}
+
+/* Spotify iframe fix */
+.movie-link-media iframe {
+  width: 100%;
+  height: 180px;
+  border: none;
+  overflow: hidden;
+}
+
+/* Remove scrollbar completely */
+.movie-link-media iframe::-webkit-scrollbar {
+  display: none;
+}
+.movie-link-fallback {
+  height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle, #222, #000);
+  color: #d4af37;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+/* added */
+/* ===============================
+   SPOTIFY EMBED FIX (NO SCROLL)
+================================ */
+
+.movie-link-media {
+  overflow: hidden;
+}
+
+.movie-link-media iframe {
+  width: 100%;
+  border: none;
+  overflow: hidden;
+  display: block;
+}
+
+/* kill iframe scrollbars */
+.movie-link-media iframe::-webkit-scrollbar {
+  display: none;
+}
+
+.movie-link-card.spotify {
+  background: linear-gradient(180deg, #1db95422, #000);
+}
+/* hjijh */
+/* Spotify thumbnail card */
+.spotify-thumb {
+  position: relative;
+  width: 100%;
+  height: 180px;
+  background: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.spotify-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  user-select: none;
+}
+
+/* Spotify badge */
+.spotify-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: #1db954;
+  color: #000;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 999px;
+}
+.spotify-embed-wrap {
+  width: 100%;
+  height: 180px;
+  overflow: hidden;
+  border-radius: 14px;
+}
+
+.spotify-embed-wrap iframe {
+  width: 100%;
+  height: 180px;
+  border: none;
+  overflow: hidden;
+  display: block;
+}
+/* ===============================
+   SPOTIFY EMBED FIX
+================================ */
+
+.spotify-embed-wrap {
+  width: 100%;
+  height: 152px; /* Standard height for the Spotify compact player */
+  overflow: hidden;
+  border-radius: 12px;
+  background: transparent; /* Removes the black background */
+}
+
+.spotify-embed-wrap iframe {
+  width: 100%;
+  height: 152px;
+  border: none;
+  display: block;
+}
+
+/* Ensure the media container matches this height */
+.movie-link-media {
+  height: 152px;
+  overflow: hidden;
+  border-bottom: 1px solid rgba(212, 175, 55, 0.25);
+}
+/* Ensure all images in the link cards fill the media area like the YouTube ones */
+.movie-link-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* This makes sure the brand logos/images don't stretch */
+  display: block;
+  transition: transform 0.3s ease;
+  user-select: none;
+}
+
+.movie-link-card:hover .movie-link-media img {
+  transform: scale(1.05); /* Subtle zoom effect on hover */
+  user-select: none;
+}
+
+/* Specific styling for platform tags */
+.platform-tag {
+  background: rgba(212, 175, 55, 0.1);
+  color: #d4af37;
+  border: 1px solid rgba(212, 175, 55, 0.3);
+}
+
+.movie-link-card.netflix .platform-tag {
+  color: #e50914;
+  border-color: #e50914;
+}
+.movie-link-card.prime .platform-tag {
+  color: #00a8e1;
+  border-color: #00a8e1;
+}
+.movie-link-card.spotify .platform-tag {
+  color: #1db954;
+  border-color: #1db954;
+}

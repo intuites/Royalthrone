@@ -1,0 +1,94 @@
+:root {
+  --gold: #d4af37;
+}
+
+/* Full cinematic background */
+.admin-login-page {
+  min-height: 100vh;
+  background:
+    linear-gradient(rgba(10, 10, 10, 0.88), rgba(10, 10, 10, 0.88)),
+    url("../assets/backgrounds/hero-bg.png");
+  background-size: cover;
+  background-position: center;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Glass login card */
+.admin-login-card {
+  width: 90%;
+  max-width: 420px;
+  padding: 50px 40px;
+  background: rgba(15, 15, 15, 0.85);
+  backdrop-filter: blur(14px);
+  border-radius: 16px;
+  text-align: center;
+
+  box-shadow:
+    0 25px 60px rgba(0, 0, 0, 0.8),
+    inset 0 0 0 1px rgba(212, 175, 55, 0.15);
+}
+
+/* Title */
+.admin-login-card h2 {
+  color: var(--gold);
+  letter-spacing: 2px;
+  margin-bottom: 24px;
+}
+
+/* Error message */
+.admin-error {
+  color: #ff6b6b;
+  margin-bottom: 16px;
+  font-size: 14px;
+}
+
+/* Form */
+.admin-login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+/* Inputs */
+.admin-login-form input {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(212, 175, 55, 0.4);
+  padding: 14px;
+  border-radius: 6px;
+  color: white;
+  outline: none;
+  font-size: 14px;
+}
+
+.admin-login-form input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+/* Gold button */
+.admin-login-form button {
+  margin-top: 10px;
+  padding: 14px;
+  background: var(--gold);
+  border: none;
+  border-radius: 6px;
+  color: black;
+  font-weight: bold;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.admin-login-form button:hover {
+  box-shadow: 0 0 20px rgba(212, 175, 55, 0.7);
+  transform: translateY(-1px);
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .admin-login-card {
+    padding: 40px 25px;
+  }
+}

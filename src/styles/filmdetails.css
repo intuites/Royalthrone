@@ -1,0 +1,521 @@
+/* ===============================
+   FILM DETAILS PAGE
+================================ */
+
+.film-details-page {
+  background: #0b0b0b;
+  color: #fff;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* ===============================
+   HERO BANNER
+================================ */
+
+.film-hero {
+  height: 80vh;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  background-position: top;
+  background-repeat: no-repeat;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.35),
+    rgba(0, 0, 0, 0.9)
+  );
+}
+
+/* ===============================
+   MAIN MOVIE INFO
+================================ */
+
+.film-main {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 50px;
+  padding: 60px 8% 30px;
+  margin-top: -180px;
+  position: relative;
+  z-index: 5;
+  align-items: flex-start;
+}
+
+/* Poster */
+.film-poster {
+  width: 100%;
+  border-radius: 16px;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.9);
+  border: 1px solid rgba(212, 175, 55, 0.4);
+}
+
+/* Info */
+.film-info {
+  max-width: 900px;
+}
+
+.film-info h1 {
+  font-size: 46px;
+  color: #d4af37;
+  margin-bottom: 8px;
+  line-height: 1.1;
+}
+
+.film-info .year {
+  color: #aaa;
+  margin-bottom: 20px;
+  font-size: 16px;
+}
+
+.film-info .desc {
+  line-height: 1.75;
+  color: #ddd;
+  font-size: 16px;
+  max-width: 900px;
+}
+
+/* ===============================
+   SECTIONS
+================================ */
+
+.film-section {
+  padding: 30px 8% 10px;
+}
+
+.film-section h2 {
+  color: #d4af37;
+  font-size: 24px;
+  margin-bottom: 18px;
+  letter-spacing: 1px;
+}
+
+/* Tight stacking */
+.film-section + .film-section {
+  padding-top: 10px;
+}
+
+/* ===============================
+   PEOPLE GRID
+================================ */
+
+.people-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 26px;
+  margin-bottom: 20px;
+}
+
+/* ===============================
+   PERSON CARD
+================================ */
+
+.person-card {
+  background: linear-gradient(180deg, #151515, #0b0b0b);
+  border-radius: 16px;
+  overflow: hidden;
+  text-align: center;
+  border: 1px solid rgba(212, 175, 55, 0.25);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+  transition: 0.35s ease;
+}
+
+.person-card:hover {
+  transform: translateY(-8px) scale(1.03);
+  border-color: rgba(212, 175, 55, 0.8);
+  box-shadow: 0 0 30px rgba(212, 175, 55, 0.5);
+}
+
+.person-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  user-select: none;
+}
+
+.person-card h4 {
+  margin: 12px 0 4px;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.person-card span {
+  display: block;
+  margin-bottom: 14px;
+  font-size: 13px;
+  color: #d4af37;
+  letter-spacing: 0.6px;
+}
+
+/* ===============================
+   GALLERY
+================================ */
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 18px;
+  padding-bottom: 40px;
+}
+
+.gallery img {
+  width: 100%;
+  border-radius: 12px;
+  object-fit: cover;
+  transition: 0.4s ease;
+  user-select: none;
+}
+
+.gallery img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 30px rgba(212, 175, 55, 0.5);
+  user-select: none;
+}
+
+/* ===============================
+   MOBILE
+================================ */
+
+@media (max-width: 900px) {
+  .film-main {
+    grid-template-columns: 1fr;
+    margin-top: -120px;
+    text-align: center;
+  }
+
+  .film-poster {
+    width: 240px;
+    margin: auto;
+  }
+
+  .film-info h1 {
+    font-size: 32px;
+  }
+
+  .film-info .desc {
+    font-size: 15px;
+  }
+}
+.scroll-top-btn {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #d4af37, #b8962e);
+  box-shadow: 0 10px 30px rgba(212, 175, 55, 0.5);
+  z-index: 999;
+}
+/* //songs */
+/* ===== SONGS SECTION ===== */
+
+.songs-title {
+  text-align: center;
+  margin-bottom: 30px;
+  letter-spacing: 1px;
+}
+
+/* Grid */
+.songs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 26px;
+}
+
+/* Card */
+.song-card {
+  background: linear-gradient(180deg, #121212, #0c0c0c);
+  border-radius: 18px;
+  padding: 18px 18px 20px;
+  box-shadow:
+    0 20px 50px rgba(0, 0, 0, 0.45),
+    inset 0 0 0 1px rgba(212, 175, 55, 0.12);
+
+  transform: translateY(20px) scale(0.97);
+  opacity: 0;
+  animation: songFadeUp 0.6s ease forwards;
+
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.song-card:hover {
+  transform: translateY(-6px) scale(1.01);
+  box-shadow:
+    0 28px 70px rgba(0, 0, 0, 0.65),
+    inset 0 0 0 1px rgba(212, 175, 55, 0.35);
+}
+
+/* Header */
+.song-header {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  margin-bottom: 14px;
+}
+
+.song-index {
+  font-size: 18px;
+  font-weight: bold;
+  color: rgba(212, 175, 55, 0.8);
+  min-width: 34px;
+}
+
+.song-main h3 {
+  margin: 0;
+  color: #d4af37;
+  font-size: 18px;
+}
+
+.song-meta {
+  font-size: 13px;
+  opacity: 0.75;
+}
+
+/* Creators */
+.song-creators {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.creator-chip {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(212, 175, 55, 0.25);
+  border-radius: 999px;
+  padding: 6px 12px;
+  font-size: 12px;
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+.creator-chip .label {
+  color: #d4af37;
+  font-weight: bold;
+}
+
+/* Player */
+.song-player {
+  margin-top: 8px;
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+.song-player iframe {
+  width: 100%;
+  height: 180px;
+  border: none;
+}
+
+/* Fallback button */
+.listen-btn {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 18px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #d4af37, #b8962e);
+  color: #000;
+  font-weight: bold;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+.listen-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 25px rgba(212, 175, 55, 0.5);
+}
+
+/* Animation */
+@keyframes songFadeUp {
+  to {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+}
+.creator-chip {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.listen-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Trailer css */
+.trailer-section {
+  margin-top: 40px;
+}
+
+.trailer-title {
+  margin-bottom: 16px;
+}
+
+.trailer-wrapper {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%; /* 16:9 */
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+}
+
+.trailer-wrapper iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* dfgdg */
+.movie-links-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.movie-link-card {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 14px;
+  border: 1px solid rgba(212, 175, 55, 0.2);
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.movie-link-card:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: #d4af37;
+  transform: translateY(-5px);
+}
+
+.movie-link-media {
+  height: 140px;
+  background: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.movie-link-media img {
+  max-width: 65%;
+  max-height: 55%;
+  object-fit: contain;
+  user-select: none;
+}
+
+/* YouTube thumbnails should be full-size */
+.movie-link-card.youtube .movie-link-media img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+  user-select: none;
+}
+
+.movie-link-info {
+  padding: 12px;
+  text-align: center;
+}
+
+.movie-link-info p {
+  font-weight: 600;
+  margin: 0;
+  color: #fff;
+}
+
+.platform-tag {
+  font-size: 10px;
+  color: #d4af37;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  opacity: 0.8;
+}
+/* Add this to filmdetails.css */
+
+.movie-link-card.youtube .movie-link-media {
+  position: relative;
+}
+
+.movie-link-card.youtube .movie-link-media img {
+  width: 100%;
+  height: 100%;
+  max-width: 100%; /* Overrides the 65% logo limit */
+  max-height: 100%;
+  user-select: none;
+  object-fit: cover; /* This makes the video frame fill the box */
+}
+
+/* Play button overlay for YouTube only */
+.play-overlay {
+  position: absolute;
+  background: rgba(255, 0, 0, 0.8);
+  color: white;
+  width: 40px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  font-size: 12px;
+  pointer-events: none;
+}
+/* Teasers Grid */
+.teasers-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.teaser-card {
+  background: #111;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.teaser-card:hover {
+  transform: translateY(-5px);
+  border-color: #d4af37;
+}
+
+.teaser-video-wrap {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%; /* 16:9 Aspect Ratio */
+}
+
+.teaser-video-wrap iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.teaser-info {
+  padding: 12px;
+}
+
+.teaser-info h4 {
+  margin: 0;
+  font-size: 1rem;
+  color: #fff;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
